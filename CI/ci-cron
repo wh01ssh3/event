@@ -1,0 +1,1 @@
+*/10 * * * * bash /root/CI/ci.sh

@@ -1,0 +1,56 @@
+<section ng-show="$ctrl.authentication.user">
+  <div class="row border-bottom">
+    <nav class="navbar navbar-fixed-top white-bg" role="navigation" style="margin-bottom: 0">
+      <div class="navbar-header">
+        <span minimaliza-sidebar hide-side-nav><i class="fa fa-bars"></i></span>
+      </div>
+      <ul class="nav navbar-top-links navbar-right" ng-show="$ctrl.authentication.user">
+        <li>
+          <a ng-click="$ctrl.signout()"><i class="fa fa-sign-out"></i> Выйти</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <nav class="navbar-default navbar-static-side slimScrollDiv" style="position: fixed; left: 0; top: 0;" role="navigation" ng-if="$ctrl.authentication.user">
+    <div class="sidebar-collapse">
+      <ul side-navigation class="nav metismenu" id="side-menu">
+        <li class="nav-header">
+          <div class="profile-element" uib-dropdown>
+            <img class="img-circle" src="http://placehold.it/48x48?text=DN"/>
+            <a uib-dropdown-toggle href>
+            <span class="clear">
+              <span class="block m-t-sm">
+                <strong class="font-bold">{{$ctrl.authentication.user.login}}</strong>
+              </span>
+            </span>
+            </a>
+          </div>
+          <div class="logo-element">
+            DN
+          </div>
+        </li>
+        <li ng-repeat="item in $ctrl.menu.items | orderBy: 'position'"
+            ng-if="item.shouldRender($ctrl.authentication.user);"
+            ng-class="{active: $state.includes(item.state)}"
+            ng-switch="item.type">
+          <a href="" ng-switch-when="dropdown">
+            <i class="{{item.icon}}"></i>
+            <span class="nav-label">{{::item.title}}&nbsp;</span>
+            <span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level collapse" ng-switch-when="dropdown">
+            <li ng-repeat="subitem in item.items | orderBy: 'position'"
+                ng-if="subitem.shouldRender($ctrl.authentication.user);"
+                ui-sref-active="active">
+              <a ui-sref="{{subitem.state}}" ng-bind="subitem.title"></a>
+            </li>
+          </ul>
+          <a ng-switch-default ui-sref="{{item.state}}">
+            <i class="{{item.icon}}"></i>
+            <span class="nav-label" ng-bind="item.title"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</section>

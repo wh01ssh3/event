@@ -1,0 +1,13 @@
+<span class="btn btn-default btn-file">
+  <i class="fa fa-search"></i> Выбрать изображение
+  <input id="file-field" type="file" name="file" multiple="false" accept="image/*" input-file-handler>
+</span>
+<div ng-show="$ctrl.model">
+  <div class="cropArea">
+    <img-crop image="$ctrl.model" area-type="rectangle" area-init-size="{w: $ctrl.cropper.cropWidth,h: $ctrl.cropper.cropHeight}" cropject="$ctrl.cropper" result-image=""></img-crop>
+  </div>
+  <br>
+  <span class="btn btn-primary" ng-click="$ctrl.uploadFile()">
+    <i class="fa fa-upload"></i> Загрузить изображение
+  </span>
+</div>

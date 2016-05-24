@@ -1,0 +1,19 @@
+<div class="row border-bottom" ng-controller="HeaderController">
+  <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+      <span  minimaliza-sidebar hide-side-nav><i class="fa fa-bars"></i></span>
+    </div>
+    <ul class="nav navbar-top-links navbar-right" ng-show="authentication.user">
+      <li>
+        <a ng-click="signout()">
+          <i class="fa fa-sign-out"></i> Выйти
+        </a>
+      </li>
+      <li>
+        <a class="right-sidebar-toggle">
+          <i class="fa fa-tasks"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

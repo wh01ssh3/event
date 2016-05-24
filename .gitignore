@@ -1,0 +1,6 @@
+/lib/server/config/env/dev-local.json
+/public
+/lib/bower
+*.log
+node_modules
+/.idea

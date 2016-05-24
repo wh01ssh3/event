@@ -1,0 +1,8 @@
+{
+  "apps": [
+    {
+      "name": "AspirityJSTemplate",
+      "script": "./lib/server/app.js"
+    }
+  ]
+}
