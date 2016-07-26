@@ -1,6 +1,10 @@
 [
   {
-    "password": "U6fjDhqJMB0r",
-    "login": "admin"
+    "password": "123456",
+    "login": "12345"
+  },
+  {
+    "password": "test11",
+    "login": "test11"
   }
 ]

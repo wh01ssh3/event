@@ -1,10 +1,10 @@
 {
   "db": {
-    "uri": "mongodb://template.cloudapp.net/template-qa"
+    "uri": "mongodb://localhost/template-qa"
   },
   "http": {
     "session": "mongodb",
-    "port": 3000
+    "port": 8080
   },
   "version": "0.0.1.0"
 }
